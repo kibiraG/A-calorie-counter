@@ -55,8 +55,17 @@ function cleanInputString(str) {
  }
 
  // Function to allow users to add entries to the calorie counter
+ // querySelector() method returns the first element that matches a CSS selector.
+ // querySelectorAll() returns all elements that matches a CSS selector(s).
+ // querySelectorAll() returns a NodeList of all the elements that match the selector.
+ // A NodeList is an array-like object, so you can access the elements using bracket notation.
+ // Template literals also known as template strings, are a feature in javascript that allow for easier string interpolation and multi-line string
+ /* Interpolation is the process of inserting strings or values into an existing for various purposes. 
+    This functionality is useful because it enables you to create powerful and dynamic strings for your software. */
  function addEntry() {
     const targetId = '#' + entryDropdown.value;
     const targetInputContainer = document.querySelector(targetId + ' .input-container');
+    const entryNumber = targetInputContainer.queryselectorAll('input[type="text"]').length; // returns a NodeList of all the text inputs in the form
+    const HTMLString = '<label for=" X-#-name">Entry ${entryNumber} Name</label>';
 
  }
