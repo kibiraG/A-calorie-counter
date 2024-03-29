@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css"/>
+        <title>Calorie Counter</title>
+    </head>
+    <body>
+        <main>
+            <h1>Calorie Counter</h1>
+            <div class="container">
+                <form id="calorie-counter">
+                    <!--The for attribute is an allowed attribute for <label> and output.
+                      When used on a <label> element it indicates the form element that
+                      this label describes.-->
+                    <!--The <label> element is used to associate a text label with a form <input> field.
+                    The label is used to tell users the value that should be entered in the associated input field
+                    The type attribute specifies the type of <input> element to display 
+                    A placeholder attribute specifies a short hint that describes the expected value of an input field
+                    The required attribute is a boolean attribute. When present, it specifies that an input field must be filled
+                    out before submitting the form.
+                    min attribute specifies the minimum value for an <input> element 
+                    The <legend> tag defines a caption for the <fieldset> element.Browser Support. Element.
+                    The <legend> element represents a caption for the content of its parent
+                    The <fieldset> element is used to group several controls as well as labels (<label>) within a web form. 
+                    The <select> element is used to create a drop-down list.-->>     
+                    <label for="budget">Budget</label>
+                    <input
+                    id="budget"
+                    type="number" 
+                    min="0"
+                    placeholder="Daily calorie budget"
+                    required/>
+                    <fieldset id="breakfast">
+                        <legend>Breakfast
+                            <div class="input-container"></div>
+                        </legend>
+                    </fieldset>
+
+                    <fieldset id = "lunch">
+                        <legend>lunch
+                            <div class="input-container"></div>
+                        </legend>
+                    </fieldset>
+
+                    <fieldset id="dinner">
+                        <legend>Dinner
+                            <div class="input-container"></div>
+                        </legend>
+                    </fieldset>
+
+                    <fieldset id="snacks">
+                        <legend>snacks
+                            <div class="input-container"></div>
+                        </legend>
+                    </fieldset>
+
+                    <fieldset id="exercise">
+                        <legend>Exercise</legend>
+                        <div class="input-container"></div>
+                    </fieldset>
+
+                    <div class="controls">
+                        <span>
+                            <label for="entry-dropdown">Add food for exercise:</label>
+                            <select id="entry-dropdown" name="options">
+                            </select>
+                            <button id="add-entry" type="button">Add Entry</button>
+                            <div>Calculate Remaining Calories</div>
+                            <button type="button" id="clear">Clear</button>
+                            <div id="output" class="output hide" ></div>
+                        </span>
+                    </div>
+
+                </form>
+
+            </div> 
+        </main>
+        <script src="./script.js"></script>
+    </body>
+
+</html>
