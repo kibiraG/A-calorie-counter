@@ -65,7 +65,12 @@ function cleanInputString(str) {
  function addEntry() {
     const targetId = '#' + entryDropdown.value;
     const targetInputContainer = document.querySelector(targetId + ' .input-container');
-    const entryNumber = targetInputContainer.queryselectorAll('input[type="text"]').length; // returns a NodeList of all the text inputs in the form
-    const HTMLString = '<label for=" X-#-name">Entry ${entryNumber} Name</label>';
+    const entryNumber = targetInputContainer.queryselectorAll('input[type="text"]').length+1; // returns a NodeList of all the text inputs in the form
+    //We update the entry number variable to be the length of the query plus 1 to fix the bug that occurs because we are querying for input[type="text"] element before adding the new entry to the page.
+    const HTMLString = `<label for=" X-#-name">Entry ${entryNumber} Name</label>
+    <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>`;
+    <label type= "number" min= "0" id="${entryDropdown.value}-${entryNumber}-calories"></label>
+    targetInputContainer.innerHTML += HTMLString;
+    addEntryButton.addEventListener("click", addEntry);
 
  }
